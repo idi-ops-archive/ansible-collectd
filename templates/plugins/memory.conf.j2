@@ -1,0 +1,6 @@
+LoadPlugin memory
+
+<Plugin memory>
+        ValuesAbsolute {{ 'true' if collectd_memory_valuesabsolute else 'false' }}
+        ValuesPercentage {{ 'true' if collectd_memory_valuespercentage else 'false' }}
+</Plugin>

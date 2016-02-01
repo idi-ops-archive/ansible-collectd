@@ -1,0 +1,7 @@
+LoadPlugin cpu
+
+<Plugin cpu>
+  ReportByCpu {{ 'true' if collectd_cpu_reportbycpu else 'false' }}
+  ReportByState {{ 'true' if collectd_cpu_reportbystate else 'false' }}
+  ValuesPercentage {{ 'true' if collectd_cpu_valuespercentage else 'false' }}
+</Plugin>

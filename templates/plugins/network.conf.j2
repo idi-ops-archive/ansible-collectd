@@ -1,0 +1,7 @@
+LoadPlugin network
+
+<Plugin network>
+        {% for entry in collectd_network_servers %}
+        Server "{{ entry.hostname }}" "{{ entry.port|default(25826) }}"
+        {% endfor %}
+</Plugin>

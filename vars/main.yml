@@ -1,0 +1,5 @@
+---
+
+collectd_includes_path: /etc/collectd.d
+
+collectd_packages: []

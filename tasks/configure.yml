@@ -1,0 +1,18 @@
+---
+
+- name: Main configuration file
+  template:
+    src: collectd.conf.j2
+    dest: /etc/collectd.conf
+    backup: no
+  notify:
+    - restart collectd
+
+
+- name: Plugin configuration file(s)
+  template:
+    src: "plugins/{{ item }}.conf.j2"
+    dest: "{{ collectd_includes_path }}/{{ item }}.conf"
+  with_items: collectd_plugins
+  notify:
+    - restart collectd

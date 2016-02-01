@@ -1,0 +1,13 @@
+Interval         {{ collectd_interval }}
+MaxReadInterval  {{ collectd_maxreadinterval }}
+Timeout          {{ collectd_timeout }}
+ReadThreads      {{ collectd_readthreads }}
+WriteThreads     {{ collectd_writethreads }}
+
+{% if collectd_hostname %}Hostname {{ collectd_hostname }}{% endif %}
+
+FQDNLookup       {{ 'true' if collectd_fqdnlookup else 'false' }}
+
+{% for entry in collectd_plugins %}
+Include "{{ collectd_includes_path }}/{{ entry }}.conf"
+{% endfor %}

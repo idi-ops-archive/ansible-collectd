@@ -1,0 +1,11 @@
+---
+
+- name: Install packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - collectd
+    - "{{ collectd_packages }}"
+  notify:
+    - restart collectd

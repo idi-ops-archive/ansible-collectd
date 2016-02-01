@@ -1,0 +1,7 @@
+---
+
+- name: Enable systemd service
+  service:
+    name: collectd
+    enabled: yes
+    state: started

@@ -1,0 +1,55 @@
+---
+
+# Sets the hostname that identifies a host (if omitted, use value from gethostname(2))
+#collectd_hostname: ''
+
+# If hostname is determined automatically, use FQDN hostname
+collectd_fqdnlookup: yes
+
+# Interval at which to query values (can be overwritten per plugin)
+collectd_interval: 10
+
+collectd_maxreadinterval: 86400
+collectd_timeout: 2
+collectd_readthreads: 5
+collectd_writethreads: 5
+
+# Load plugins (logging plugins must come first)
+collectd_plugins:
+  - logfile
+  - syslog
+  - network
+  - cpu
+  - load
+  - memory
+  - interface
+
+# Logfile
+collectd_logfile_loglevel: info
+collectd_logfile_file: STDOUT
+collectd_logfile_timestamp: yes
+collectd_logfile_printseverity: no
+
+# Syslog
+collectd_syslog_level: info
+
+# Network
+collectd_network_servers:
+  - hostname: localhost
+    port: 25826
+
+# CPU
+collectd_cpu_reportbycpu: yes
+collectd_cpu_reportbystate: yes
+collectd_cpu_valuespercentage: no
+
+# Load
+collectd_load_reportrelative: yes
+
+# Memory
+collectd_memory_valuesabsolute: yes
+collectd_memory_valuespercentage: no
+
+# Interface
+collectd_interface_interface: lo
+collectd_interface_ignoreselected: no

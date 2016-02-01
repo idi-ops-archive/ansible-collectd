@@ -1,0 +1,8 @@
+LoadPlugin logfile
+
+<Plugin logfile>
+        LogLevel {{ collectd_logfile_loglevel }}
+        File {{ collectd_logfile_file }}
+        Timestamp {{ 'true' if collectd_logfile_timestamp else 'false' }}
+        PrintSeverity {{ 'true' if collectd_logfile_printseverity else 'false' }}
+</Plugin>
