@@ -6,6 +6,6 @@
     state: latest
   with_items:
     - collectd
-    - "{{ collectd_packages }}"
+    - "{{ collectd_extra_packages }}"
   notify:
     - restart collectd

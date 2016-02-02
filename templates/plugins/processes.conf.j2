@@ -1,0 +1,10 @@
+LoadModule processes
+
+<Plugin processes>
+{% for entry in collectd_processes_processes %}
+  Process "{{ entry }}"
+{% endfor %}
+{% for entry in collectd_processes_regexes %}
+  ProcessMatch {{ entry.name }} {{ entry.regexp }}
+{% endfor %}
+</Plugin>

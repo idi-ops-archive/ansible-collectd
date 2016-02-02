@@ -1,0 +1,16 @@
+LoadModule mysql
+
+<Plugin mysql>
+{% for entry in collectd_mysql_databases %}
+  <Database {{ entry.name }}>
+    Host "{{ entry.host }}"
+    Port "{{ entry.port }}"
+    User "{{ entry.user }}"
+    Password "{{ entry.password }}"
+    MasterStats {{ 'true' if entry.masterstats else 'false' }}
+    SlaveStats {{ 'true' if entry.slavestats else 'false' }}
+    InnodbStats {{ 'true' if entry.innodbstats else 'false' }}
+    ConnectTimeout {{ entry.connecttimeout }}
+  </Database>
+{% endfor %}
+</Plugin>

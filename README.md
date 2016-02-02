@@ -1,7 +1,7 @@
 collectd Ansible role
 =====================
 
-Install and configures collectd
+Installs and configures collectd
 
 Requirements
 ------------
@@ -12,7 +12,29 @@ Requirements
 Role Variables
 --------------
 
-See defaults/main.yml
+See defaults/main.yml and `collectd.conf(5) <https://collectd.org/documentation/manpages/collectd.conf.5.shtml>`_
+
+Example Playbook
+----------------
+
+    ---
+    - hosts: localhost
+      become: yes
+      roles:
+        - role: collectd
+          collectd_interval: 60
+          collectd_plugins:
+            - syslog
+            - network
+            - cpu
+            - ping
+          collectd_network_servers:
+            - hostname: localhost
+              port: 25826
+          collectd_ping_hosts:
+            - example.com
+            - 8.8.8.8
+
 
 License
 -------

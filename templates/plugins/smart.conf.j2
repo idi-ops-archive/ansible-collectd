@@ -1,0 +1,8 @@
+LoadModule smart
+
+<Plugin smart>
+{% for entry in collectd_smart_disks %}
+  Disk "{{ entry }}"
+{% endfor %}
+  IgnoreSelected {{ 'true' if collectd_smart_ignoreselected else 'false' }}
+</Plugin>
