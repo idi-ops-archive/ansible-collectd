@@ -1,0 +1,8 @@
+LoadPlugin protocols
+
+<Plugin protocols>
+{% for entry in collectd_protocols_values %}
+  Value "{{ entry }}"
+{% endfor %}
+  IgnoreSelected {{ 'true' if collectd_protocols_ignoreselected else 'false' }}
+</Plugin>

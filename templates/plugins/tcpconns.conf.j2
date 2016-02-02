@@ -1,0 +1,12 @@
+LoadPlugin tcpconns
+
+<Plugin tcpconns>
+  ListeningPorts {{ 'true' if collectd_tcpconns_listeningports else 'false' }}
+{% for entry in collectd_tcpconns_localports %}
+  LocalPort {{ entry }}
+{% endfor %}
+{% for entry in collectd_tcpconns_remoteports %}
+  RemotePort {{ entry }}
+{% endfor %}
+  AllPortsSummary {{ 'true' if collectd_tcpconns_allportssummary else 'false' }}
+</Plugin>

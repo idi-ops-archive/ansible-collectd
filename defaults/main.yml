@@ -1,0 +1,194 @@
+---
+
+# Sets the hostname that identifies a host (if omitted, use value from gethostname(2))
+#collectd_hostname: ''
+
+# If hostname is determined automatically, use FQDN hostname
+collectd_fqdnlookup: yes
+
+# Interval at which to query values (can be overwritten per plugin)
+collectd_interval: 60
+
+collectd_maxreadinterval: 86400
+collectd_timeout: 2
+collectd_readthreads: 5
+collectd_writethreads: 5
+
+# Load plugins (logging plugins should come first)
+collectd_plugins:
+  - logfile
+  - syslog
+  - network
+  - cpu
+  - df
+  - interface
+  - load
+  - memory
+  - processes
+  - protocols
+  - tcpconns
+  - uptime
+  - users
+  - vmem
+  - swap
+#  - lvm
+#  - mysql
+#  - ping
+#  - postgresql
+#  - redis
+#  - sensors
+#  - smart
+#  - virt
+
+# CentOS/Fedora ships extra plugins as separate packages (add them and in collectd_plugins too)
+collectd_extra_packages: []
+#  - collectd-lvm
+#  - collectd-mysql
+#  - collectd-ping
+#  - collectd-postgresql
+#  - collectd-redis
+#  - collectd-sensors
+#  - collectd-smart
+#  - collectd-virt
+
+# Logfile
+collectd_logfile_loglevel: info
+collectd_logfile_file: STDOUT
+collectd_logfile_timestamp: yes
+collectd_logfile_printseverity: no
+
+# Syslog
+collectd_syslog_level: info
+
+# Network
+collectd_network_servers:
+  - hostname: localhost
+    port: 25826
+
+# CPU
+collectd_cpu_reportbycpu: yes
+collectd_cpu_reportbystate: yes
+collectd_cpu_valuespercentage: yes
+
+# Load
+collectd_load_reportrelative: yes
+
+# Memory
+collectd_memory_valuesabsolute: yes
+collectd_memory_valuespercentage: no
+
+# Interface
+collectd_interface_interfaces:
+  - 'lo'
+collectd_interface_ignoreselected: no
+
+# df
+collectd_df_devices: []
+collectd_df_mountpoints: []
+collectd_df_fstypes: []
+collectd_df_ignoreselected: no
+collectd_df_reportinodes: no
+collectd_df_reportbydevice: no
+collectd_df_valuesabsolute: yes
+collectd_df_valuespercentage: no
+
+# Processes
+collectd_processes_processes: []
+#  - perl
+collectd_processes_regexes: []
+#  - name: ansible
+#    regexp: '.*python.*ansible'
+
+# Protocols
+collectd_protocols_values: []
+collectd_protocols_ignoreselected: no
+
+# TCPConns
+collectd_tcpconns_listeningports: yes
+collectd_tcpconns_localports: []
+collectd_tcpconns_remoteports: []
+collectd_tcpconns_allportssummary: no
+
+# Uptime (no options)
+
+# Users (no options)
+
+# VMem
+collectd_vmem_verbose: no
+
+# LVM (no options)
+
+# MySQL
+collectd_mysql_databases: []
+#  - name: test
+#    host: localhost
+#    port: 3306
+#    user: test
+#    password: test
+#    masterstats: no
+#    slavestats: no
+#    innodbstats: no
+#    connecttimeout: 10
+
+# Ping
+collectd_ping_hosts: []
+#  - 127.0.0.1
+#  - example.com
+collectd_ping_interval: 1.0
+collectd_ping_timeout: 0.9
+collectd_ping_ttl: 255
+collectd_ping_maxmissed: '-1'
+#collectd_ping_sourceaddress: 127.0.0.1
+#collectd_ping_device: eth0
+
+# PostgreSQL
+collectd_postgresql_databases: []
+#  - name: test
+#    host: localhost
+#    port: 5432
+#    user: test
+#    password: test
+#    sslmode: prefer
+
+# Redis
+collectd_redis_nodes: []
+#  - name: example
+#    host: redis.example.com
+#    port: 6379
+#    timeout: 2000
+
+# Sensors
+#collectd_sensors_configfile: ''
+collectd_sensors_ignoreselected: no
+collectd_sensors_sensors: []
+#  - 'it8712-isa-0290/voltage-in1'
+#  - 'acpitz-virtual-0'
+
+# SMART
+collectd_smart_disks: []
+#  - 'sdd'
+#  - '/hda[34]/'
+collectd_smart_ignoreselected: no
+
+# Swap
+collectd_swap_reportbydevice: no
+collectd_swap_reportbytes: no
+collectd_swap_valuesabsolute: yes
+collectd_swap_valuespercentage: no
+
+# Libvirt
+collectd_virt_uri: ''
+collectd_virt_refreshinterval: 60
+collectd_virt_hostnameformat: 'name'
+collectd_virt_interfaceformat: 'name'
+collectd_virt_instanceformat: 'name'
+collectd_virt_ignoreselected: no
+collectd_virt_domains: []
+#  - 'name'
+#  - 'name2'
+collectd_virt_blockdevices: []
+#  - 'name:device'
+#  - 'name2:device2'
+collectd_virt_interfaces: []
+#  - 'name:interface'
+#  - 'name2:interface2'

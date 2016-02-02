@@ -1,0 +1,22 @@
+LoadPlugin virt
+
+<Plugin virt>
+  Connection "{{ collectd_virt_uri }}"
+  RefreshInterval {{ collectd_virt_refreshinterval }}
+  HostnameFormat "{{ collectd_virt_hostnameformat }}"
+  InterfaceFormat "{{ collectd_virt_interfaceformat }}"
+  PluginInstanceFormat "{{ collectd_virt_instanceformat }}"
+
+{% for entry in collectd_virt_domains %}
+  Domain "{{ entry }}"
+{% endfor %}
+
+{% for entry in collectd_virt_blockdevices %}
+  BlockDevice "{{ entry }}"
+{% endfor %}
+
+{% for entry in collectd_virt_interfaces %}
+  InterfaceDevice "{{ entry }}"
+{% endfor %}
+
+</Plugin>

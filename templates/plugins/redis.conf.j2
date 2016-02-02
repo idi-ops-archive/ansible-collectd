@@ -1,0 +1,11 @@
+LoadPlugin redis
+
+<Plugin redis>
+{% for entry in collectd_redis_nodes %}
+  <Node {{ entry.name }}>
+    Host "{{ entry.host }}"
+    Port "{{ entry.port }}"
+    Timeout {{ entry.timeout }}
+  </Node>
+{% endfor %}
+</Plugin>
