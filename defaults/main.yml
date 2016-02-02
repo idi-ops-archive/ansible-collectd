@@ -68,7 +68,7 @@ collectd_network_servers:
 # CPU
 collectd_cpu_reportbycpu: yes
 collectd_cpu_reportbystate: yes
-collectd_cpu_valuespercentage: no
+collectd_cpu_valuespercentage: yes
 
 # Load
 collectd_load_reportrelative: yes
