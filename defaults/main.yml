@@ -7,7 +7,7 @@
 collectd_fqdnlookup: yes
 
 # Interval at which to query values (can be overwritten per plugin)
-collectd_interval: 10
+collectd_interval: 60
 
 collectd_maxreadinterval: 86400
 collectd_timeout: 2
