@@ -124,8 +124,9 @@ collectd_mysql_databases: []
 #    port: 3306
 #    user: test
 #    password: test
-#    masterstats: false
-#    slavestats: false
+#    masterstats: no
+#    slavestats: no
+#    innodbstats: no
 #    connecttimeout: 10
 
 # Ping
@@ -133,11 +134,11 @@ collectd_ping_hosts: []
 #  - 127.0.0.1
 #  - example.com
 collectd_ping_interval: 1.0
-collectd_timeout: 0.9
-collectd_ttl: 255
-collectd_maxmissed: '-1'
-#collectd_sourceaddress: 127.0.0.1
-#collectd_device: eth0
+collectd_ping_timeout: 0.9
+collectd_ping_ttl: 255
+collectd_ping_maxmissed: '-1'
+#collectd_ping_sourceaddress: 127.0.0.1
+#collectd_ping_device: eth0
 
 # PostgreSQL
 collectd_postgresql_databases: []
@@ -157,7 +158,7 @@ collectd_redis_nodes: []
 
 # Sensors
 #collectd_sensors_configfile: ''
-collectd_sensors_ignoreselect: no
+collectd_sensors_ignoreselected: no
 collectd_sensors_sensors: []
 #  - 'it8712-isa-0290/voltage-in1'
 #  - 'acpitz-virtual-0'

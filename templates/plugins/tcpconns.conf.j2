@@ -1,4 +1,4 @@
-LoadModule tcpconns
+LoadPlugin tcpconns
 
 <Plugin tcpconns>
   ListeningPorts {{ 'true' if collectd_tcpconns_listeningports else 'false' }}

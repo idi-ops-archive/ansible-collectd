@@ -1,4 +1,4 @@
-LoadModule ping
+LoadPlugin ping
 
 <Plugin ping>
 {% for entry in collectd_ping_hosts %}
@@ -8,6 +8,6 @@ LoadModule ping
   Timeout {{ collectd_ping_timeout }}
   TTL {{ collectd_ping_ttl }}
   MaxMissed {{ collectd_ping_maxmissed }}
-  {% if collectd_ping_sourceaddress %}SourceAddress {{ collectd_ping_sourceaddress }}{% endif %}
-  {% if collectd_ping_device %}Device {{ collectd_ping_device }}{% endif %}
+  {% if collectd_ping_sourceaddress is defined %}SourceAddress {{ collectd_ping_sourceaddress }}{% endif %}
+  {% if collectd_ping_device is defined %}Device {{ collectd_ping_device }}{% endif %}
 </Plugin>

@@ -1,13 +1,13 @@
-LoadModule df
+LoadPlugin df
 
 <Plugin df>
 {% for entry in collectd_df_devices %}
   Device "{{ entry }}"
 {% endfor %}
-{% for entry in collectd_mountpoints %}
+{% for entry in collectd_df_mountpoints %}
   MountPoint "{{ entry }}"
 {% endfor %}
-{% for entry in collectd_fstypes %}
+{% for entry in collectd_df_fstypes %}
   FSType "{{ entry }}"
 {% endfor %}
 

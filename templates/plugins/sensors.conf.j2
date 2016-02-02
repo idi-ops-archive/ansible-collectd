@@ -1,7 +1,8 @@
-LoadModule sensors
+LoadPlugin sensors
 
 <Plugin sensors>
 {% for entry in collectd_sensors_sensors %}
   Sensor "{{ entry }}"
   IgnoreSelected {{ 'true' if collectd_sensors_ignoreselected else 'false' }}
+{% endfor %}
 </Plugin>
