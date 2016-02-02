@@ -78,7 +78,8 @@ collectd_memory_valuesabsolute: yes
 collectd_memory_valuespercentage: no
 
 # Interface
-collectd_interface_interface: lo
+collectd_interface_interfaces:
+  - 'lo'
 collectd_interface_ignoreselected: no
 
 # df

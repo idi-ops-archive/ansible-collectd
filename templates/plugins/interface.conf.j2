@@ -1,6 +1,8 @@
 LoadPlugin interface
 
 <Plugin interface>
-        Interface "{{ collectd_interface_interface }}"
-        IgnoreSelected {{ 'true' if collectd_interface_ignoreselected else 'false' }}
+{% for entry in collectd_interface_interfaces %}
+  Interface "{{ entry }}"
+{% endfor %}
+  IgnoreSelected {{ 'true' if collectd_interface_ignoreselected else 'false' }}
 </Plugin>
