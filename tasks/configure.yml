@@ -16,3 +16,12 @@
   with_items: collectd_plugins
   notify:
     - restart collectd
+
+- name: Transfer SELinux module for collectd plugins
+  copy:
+    src: collectd-plugins.pp
+    dest: /tmp/collectd-plugins.pp
+    backup: no
+
+- name: Apply SELinux policy
+  command: "/usr/sbin/semodule -i /tmp/collectd-plugins.pp"
