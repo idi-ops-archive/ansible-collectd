@@ -1,6 +1,6 @@
 ---
 
-# SELinux type enformance (collectd and SELinux do not play well currently in CentOS 7.x)
+# SELinux type enforcement (collectd and SELinux do not play well currently in CentOS 7.x)
 collectd_selinux_permissive: yes
 
 # Sets the hostname that identifies a host (if omitted, use value from gethostname(2))
