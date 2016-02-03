@@ -1,5 +1,8 @@
 ---
 
+# SELinux type enforcement (collectd and SELinux do not play well currently in CentOS 7.x)
+collectd_selinux_permissive: yes
+
 # Sets the hostname that identifies a host (if omitted, use value from gethostname(2))
 #collectd_hostname: ''
 
@@ -20,6 +23,7 @@ collectd_plugins:
   - syslog
   - network
   - cpu
+  - disk
   - df
   - interface
   - load
@@ -81,6 +85,12 @@ collectd_memory_valuespercentage: no
 collectd_interface_interfaces:
   - 'lo'
 collectd_interface_ignoreselected: no
+
+# Disk
+collectd_disk_disks: []
+#  - 'sdd'
+#  - '/hda[34]/'
+collectd_disk_ignoreselected: no
 
 # df
 collectd_df_devices: []
