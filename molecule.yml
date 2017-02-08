@@ -6,8 +6,8 @@ driver:
 docker:
   containers:
     - name: ansible-collectd
-      image: ubuntu
-      image_version: latest
+      image: centos
+      image_version: centos7.3.1611
       ansible_groups:
         - group1
 verifier:
