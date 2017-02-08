@@ -12,7 +12,7 @@
   template:
     src: "plugins/{{ item }}.conf.j2"
     dest: "{{ collectd_includes_path }}/{{ item }}.conf"
-  with_items: collectd_plugins
+  with_items: "{{ collectd_plugins }}"
   notify:
     - restart collectd
 
@@ -20,4 +20,4 @@
   selinux_permissive:
     domain: collectd_t
     permissive: yes
-  when: collectd_selinux_permissive and ansible_selinux.status != 'disabled'
+  when: collectd_selinux_permissive and ansible_selinux and ansible_selinux.status != 'disabled'

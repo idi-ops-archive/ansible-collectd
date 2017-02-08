@@ -17,6 +17,8 @@ collectd_timeout: 2
 collectd_readthreads: 5
 collectd_writethreads: 5
 
+collectd_package_version: 5.7.1
+
 # Load plugins (logging plugins should come first)
 collectd_plugins:
   - logfile

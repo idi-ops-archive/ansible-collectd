@@ -1,3 +1,5 @@
+.cache
+.flake8
 *.pyc
 .*.sw?
 .molecule
