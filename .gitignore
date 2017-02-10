@@ -1,6 +1,7 @@
-.cache
-.flake8
 *.pyc
 .*.sw?
+.cache
+.flake8
 .molecule
+pytestdebug.log
 venv
