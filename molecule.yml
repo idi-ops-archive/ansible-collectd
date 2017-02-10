@@ -6,8 +6,9 @@ driver:
 docker:
   containers:
     - name: ansible-collectd
-      image: centos
-      image_version: centos7.3.1611
+      image: centos/systemd
+      image_version: latest  # centos/systemd doesn't provide any other tags :(
+      privileged: True
       ansible_groups:
         - group1
 verifier:
