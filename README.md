@@ -8,6 +8,7 @@ Requirements
 
  * CentOS 7.x
  * Ansible 2.x
+ * systemd
 
 Role Variables
 --------------
@@ -34,6 +35,7 @@ Example Playbook
           collectd_ping_hosts:
             - example.com
             - 8.8.8.8
+          collectd_package_version: 5.7.1
 
 
 License
