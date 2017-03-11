@@ -5,3 +5,4 @@
     name: collectd
     enabled: yes
     state: started
+    use: systemd

@@ -1,0 +1,8 @@
+*.pyc
+.*.sw?
+.cache
+.flake8
+.molecule
+.vagrant
+pytestdebug.log
+venv

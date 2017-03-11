@@ -8,6 +8,7 @@ Requirements
 
  * CentOS 7.x
  * Ansible 2.x
+ * systemd
 
 Role Variables
 --------------
@@ -34,7 +35,14 @@ Example Playbook
           collectd_ping_hosts:
             - example.com
             - 8.8.8.8
+          collectd_package_version: 5.7.1
 
+Tests
+-----
+
+Use [molecule](https://github.com/metacloud/molecule) to test this role.
+
+Because this role depends on systemd and SELinux, only a Vagrant provider is configured at the moment.
 
 License
 -------
