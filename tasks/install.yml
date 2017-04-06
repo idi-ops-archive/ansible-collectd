@@ -9,9 +9,11 @@
 - name: Install packages
   package:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items:
-    - "collectd-{{ collectd_package_version }}"
+    - "collectd"
     - "{{ collectd_extra_packages }}"
   notify:
     - restart collectd
+  tags:
+    - skip_ansible_lint
