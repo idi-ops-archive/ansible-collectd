@@ -17,8 +17,6 @@ collectd_timeout: 2
 collectd_readthreads: 5
 collectd_writethreads: 5
 
-collectd_package_version: 5.7.1
-
 # Load plugins (logging plugins should come first)
 collectd_plugins:
   - logfile
@@ -47,7 +45,7 @@ collectd_plugins:
 #  - virt
 
 collectd_extra_packages:
-  - policycoreutils-python-2.5-11.el7_3  # Needed for selinux tasks
+  - policycoreutils-python  # Needed for selinux tasks
 # CentOS/Fedora ships extra plugins as separate packages (add them and in collectd_plugins too)
 #  - collectd-lvm
 #  - collectd-mysql

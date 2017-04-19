@@ -35,7 +35,6 @@ Example Playbook
           collectd_ping_hosts:
             - example.com
             - 8.8.8.8
-          collectd_package_version: 5.7.1
 
 Tests
 -----
